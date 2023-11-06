@@ -23,8 +23,8 @@ function Display(props) {
         <p>Loading data...</p>
       ) : (
         <div className="flexItem">
-          <h1>Post Code :- {postalcode}</h1>
-          <h1>Country :-{props.dataList.country}</h1>
+          <h3>Post Code :- {postalcode}</h3>
+          <h3>Country :-{props.dataList.country}</h3>
 
           {placename}
           <button onClick={clearData}>Clear</button>
