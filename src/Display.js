@@ -1,4 +1,8 @@
 function Display(props) {
+  const clearData = () => {
+    props.clearData();
+  };
+
   if (Object.keys(props.dataList).length === 0) {
     return (
       <div className="displayItems2">
@@ -15,10 +19,17 @@ function Display(props) {
   ));
   return (
     <div className="displayItems">
-      <h1>Post Code :- {postalcode}</h1>
-      <h1>Country :-{props.dataList.country}</h1>
+      {props.isLoading ? (
+        <p>Loading data...</p>
+      ) : (
+        <div className="flexItem">
+          <h1>Post Code :- {postalcode}</h1>
+          <h1>Country :-{props.dataList.country}</h1>
 
-      {placename}
+          {placename}
+          <button onClick={clearData}>Clear</button>
+        </div>
+      )}
     </div>
   );
 }

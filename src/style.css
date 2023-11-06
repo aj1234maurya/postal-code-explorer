@@ -37,21 +37,35 @@ header {
   margin-left: 5px;
   margin-bottom: 2vw;
 }
-.displayItems2 {
+.displayDiv {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 .displayItems {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  margin-left: 23vw;
   padding: 1vw;
-  flex-direction: column;
   border: 3px solid black;
   line-height: 2;
   background-color: rgba(0, 0, 0, 0.349);
   margin-bottom: 20px;
+}
+.displayItems p {
+  font-size: 5vw;
+}
+.flexItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.displayItems button {
+  width: fit-content;
+  margin-top: 10px;
+
+  align-self: flex-end;
+  padding: 10px 10px;
+}
+.displayItems button:hover {
+  background-color: blanchedalmond;
 }
 footer {
   display: flex;

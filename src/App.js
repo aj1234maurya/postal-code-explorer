@@ -11,8 +11,14 @@ function App() {
 
   const [input, setInput] = useState("");
   const [info, setInfo] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const clearData = () => {
+    setInfo({});
+  };
 
   async function fetchData(url) {
+    setIsLoading(true);
     try {
       const result = await axios.get(url);
       const data = result.data;
@@ -20,6 +26,8 @@ function App() {
       setInfo(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -40,7 +48,9 @@ function App() {
         handleChange={handleInput}
         handleSubmit={handleEnter}
       />
-      <Display dataList={info} />
+      <div className="displayDiv">
+        <Display dataList={info} clearData={clearData} isLoading={isLoading} />
+      </div>
       <Footer />
     </div>
   );
