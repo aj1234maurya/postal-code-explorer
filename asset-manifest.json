@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/postal-code-explorer/static/css/main.705253fb.css",
-    "main.js": "/postal-code-explorer/static/js/main.e89db494.js",
+    "main.js": "/postal-code-explorer/static/js/main.0989d2bf.js",
     "index.html": "/postal-code-explorer/index.html",
     "main.705253fb.css.map": "/postal-code-explorer/static/css/main.705253fb.css.map",
-    "main.e89db494.js.map": "/postal-code-explorer/static/js/main.e89db494.js.map"
+    "main.0989d2bf.js.map": "/postal-code-explorer/static/js/main.0989d2bf.js.map"
   },
   "entrypoints": [
     "static/css/main.705253fb.css",
-    "static/js/main.e89db494.js"
+    "static/js/main.0989d2bf.js"
   ]
 }
