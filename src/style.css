@@ -57,9 +57,11 @@ header {
   background-color: rgba(0, 0, 0, 0.349);
   margin-bottom: 20px;
 }
-li {
+li,
+.displayItems h5 {
   font-size: larger;
 }
+
 .displayItems p {
   font-size: 5vw;
 }

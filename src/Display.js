@@ -14,7 +14,7 @@ function Display(props) {
   const postalcode = props.dataList["post code"];
   const placename = props.dataList.places.map((place, index) => (
     <div>
-      <li>Place Name:- {place["place name"]} </li>
+      <li>{place["place name"]} </li>
     </div>
   ));
   return (
@@ -23,9 +23,9 @@ function Display(props) {
         <p>Loading data...</p>
       ) : (
         <div className="flexItem">
-          <h3>Post Code :- {postalcode}</h3>
-          <h3>Country :-{props.dataList.country}</h3>
-
+          <h5>Post Code :- {postalcode}</h5>
+          <h5>Country :-{props.dataList.country}</h5>
+          <h5>Place Names :- </h5>
           {placename}
           <button onClick={clearData}>Clear</button>
         </div>
