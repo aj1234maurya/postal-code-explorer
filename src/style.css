@@ -32,6 +32,9 @@ header {
   display: flex;
   justify-content: center;
 }
+.searchBar label {
+  font-size: larger;
+}
 .searchBar input {
   padding: 0.5vw 1vw;
   margin-left: 5px;
@@ -42,12 +45,18 @@ header {
   display: flex;
   justify-content: center;
 }
+.displayItems2 {
+  font-size: larger;
+}
 .displayItems {
   padding: 1vw;
   border: 3px solid black;
   line-height: 2;
   background-color: rgba(0, 0, 0, 0.349);
   margin-bottom: 20px;
+}
+li {
+  font-size: 3vw;
 }
 .displayItems p {
   font-size: 5vw;
