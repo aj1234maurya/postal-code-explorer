@@ -5,9 +5,7 @@ function Display(props) {
 
   if (Object.keys(props.dataList).length === 0) {
     return (
-      <div className="displayItems2">
-        Enter the Postal-Code to get the Information.
-      </div>
+      <div className="displayItems2">Enter Zip-code and Select Country</div>
     );
   }
 

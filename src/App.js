@@ -7,27 +7,34 @@ import axios from "axios";
 import "./style.css";
 
 function App() {
-  const API = "https://api.zippopotam.us/in/";
+  const API = `https://api.zippopotam.us/`;
 
   const [input, setInput] = useState("");
   const [info, setInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("");
 
   const clearData = () => {
     setInfo({});
   };
 
+  function handleCountryChange(event) {
+    setSelectedCountry(event.target.value);
+  }
+
   async function fetchData(url) {
-    setIsLoading(true);
-    try {
-      const result = await axios.get(url);
-      const data = result.data;
-      console.log(data);
-      setInfo(data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false);
+    if (selectedCountry && input) {
+      setIsLoading(true);
+      try {
+        const result = await axios.get(url);
+        const data = result.data;
+        console.log(data);
+        setInfo(data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   }
 
@@ -37,7 +44,7 @@ function App() {
   }
   function handleEnter(event) {
     event.preventDefault();
-    fetchData(`${API}${input}`);
+    fetchData(`${API}${selectedCountry}/${input}`);
   }
 
   return (
@@ -47,6 +54,8 @@ function App() {
         inputPostal={input}
         handleChange={handleInput}
         handleSubmit={handleEnter}
+        selectedCountry={selectedCountry}
+        handleCountryChange={handleCountryChange}
       />
       <div className="displayDiv">
         <Display dataList={info} clearData={clearData} isLoading={isLoading} />
