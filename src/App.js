@@ -14,6 +14,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
 
+  //new
+  const [notFound, setNotFound] = useState(false);
+
   const clearData = () => {
     setInfo({});
   };
@@ -30,8 +33,16 @@ function App() {
         const data = result.data;
         console.log(data);
         setInfo(data);
+        //new
+        setNotFound(false);
       } catch (error) {
-        console.log(error);
+        //new
+        if (error.response && error.response.status === 404) {
+          setNotFound(true); // Set notFound state if 404 error occurs
+        } else {
+          console.log(error);
+        }
+        // console.log(error);
       } finally {
         setIsLoading(false);
       }
@@ -58,7 +69,12 @@ function App() {
         handleCountryChange={handleCountryChange}
       />
       <div className="displayDiv">
-        <Display dataList={info} clearData={clearData} isLoading={isLoading} />
+        <Display
+          dataList={info}
+          clearData={clearData}
+          isLoading={isLoading}
+          notFound={notFound}
+        />
       </div>
       <Footer />
     </div>

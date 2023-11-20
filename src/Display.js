@@ -3,6 +3,10 @@ function Display(props) {
     props.clearData();
   };
 
+  if (props.notFound) {
+    return <div className="displayItems2">Data not found on server</div>;
+  }
+
   if (Object.keys(props.dataList).length === 0) {
     return (
       <div className="displayItems2">Enter Zip-code and Select Country</div>
